@@ -40,20 +40,20 @@ O recurso `chamados` representa solicitações de suporte feitas por pessoas usu
 
 ## 4. Endpoints
 
-A API utilizará a versão inicial no caminho `/api/v1`.
+Para esta atividade, as URIs são apresentadas diretamente a partir do recurso, conforme o padrão solicitado no enunciado.
 
 | Operação | Método | URI | Parâmetros | Status de sucesso |
 |---|---|---|---|---|
-| Listar chamados | `GET` | `/api/v1/chamados` | Consulta opcional `status` | `200 OK` |
-| Consultar um chamado | `GET` | `/api/v1/chamados/{id}` | `id` na URI | `200 OK` |
-| Criar chamado | `POST` | `/api/v1/chamados` | Corpo JSON | `201 Created` |
-| Atualizar chamado | `PATCH` | `/api/v1/chamados/{id}` | `id` na URI e corpo JSON | `200 OK` |
-| Remover chamado | `DELETE` | `/api/v1/chamados/{id}` | `id` na URI | `204 No Content` |
+| Listar chamados | `GET` | `/chamados` | Consulta opcional `status` | `200 OK` |
+| Consultar um chamado | `GET` | `/chamados/{id}` | `id` na URI | `200 OK` |
+| Criar chamado | `POST` | `/chamados` | Corpo JSON | `201 Created` |
+| Atualizar chamado | `PATCH` | `/chamados/{id}` | `id` na URI e corpo JSON | `200 OK` |
+| Remover chamado | `DELETE` | `/chamados/{id}` | `id` na URI | `204 No Content` |
 
 ### Listar chamados
 
 ```http
-GET /api/v1/chamados?status=aberto
+GET /chamados?status=aberto
 Accept: application/json
 ```
 
@@ -77,7 +77,7 @@ Resposta `200 OK`:
 ### Consultar um chamado
 
 ```http
-GET /api/v1/chamados/42
+GET /chamados/42
 Accept: application/json
 ```
 
@@ -96,7 +96,7 @@ Resposta `200 OK`:
 ### Criar um chamado
 
 ```http
-POST /api/v1/chamados
+POST /chamados
 Content-Type: application/json
 ```
 
@@ -127,7 +127,7 @@ Resposta `201 Created`:
 A atualização será parcial, por isso somente os campos alterados precisam ser enviados.
 
 ```http
-PATCH /api/v1/chamados/42
+PATCH /chamados/42
 Content-Type: application/json
 ```
 
@@ -153,7 +153,7 @@ Resposta `200 OK`:
 ### Remover um chamado
 
 ```http
-DELETE /api/v1/chamados/42
+DELETE /chamados/42
 ```
 
 Resposta `204 No Content`, sem corpo na resposta.
@@ -206,11 +206,11 @@ Resposta `204 No Content`, sem corpo na resposta.
 2. Foi escolhido `POST` para criação, `PATCH` para atualização parcial e `DELETE` para remoção.
 3. O status inicial será `aberto`.
 4. Foi incluído o filtro opcional `status` na listagem.
-5. A versão inicial da API será identificada por `/api/v1`.
+5. As URIs seguirão diretamente o padrão `/chamados` e `/chamados/{id}`, conforme solicitado no enunciado da Atividade 2.
 
 ### Revisão por outra equipe
 
-**Alteração feita após a revisão:** a URI foi padronizada para utilizar nomes de recursos no plural, como `/api/v1/chamados` e `/api/v1/chamados/{id}`, sem verbos como `/criarChamado` ou `/listarChamados`.
+**Alteração feita após a revisão:** a URI foi padronizada para utilizar nomes de recursos no plural, como `/chamados` e `/chamados/{id}`, sem verbos como `/criarChamado` ou `/listarChamados`.
 
 Essa alteração torna o contrato mais coerente com os métodos HTTP e facilita a compreensão para quem desenvolverá o front-end.
 
