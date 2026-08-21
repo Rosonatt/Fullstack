@@ -4,6 +4,7 @@
 
 - Bruno Oliveira
 - Natalia Cardoso
+- Raissa Queiroz
 - Rosonatt Ferreira
 - Ryan Guiwison
 

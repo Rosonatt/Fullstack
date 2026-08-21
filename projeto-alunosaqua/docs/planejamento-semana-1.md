@@ -5,6 +5,7 @@
 - Bruno Oliveira
 - Natalia Cardoso
 - Rosonatt Ferreira
+- Raissa Queiroz
 - Ryan Guiwison
 
 ## 1. A ideia do projeto
