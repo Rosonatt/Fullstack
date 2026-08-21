@@ -4,7 +4,7 @@
 
 - Bruno Oliveira
 - Natalia Cardoso
-- Raissa Queiroz 
+- Raissa Queiroz
 - Rosonatt Ferreira
 - Ryan Guiwison
 
@@ -21,6 +21,50 @@ O projeto também pode crescer com o tempo e receber outras áreas, como notas, 
 ## Objetivo
 
 Criar uma aplicação web simples para organizar solicitações da comunidade escolar e facilitar o contato com a equipe responsável.
+
+## Atualizações das atividades
+
+### Atividade 1 — Planejamento e estruturação do projeto
+
+Na primeira atividade, o grupo definiu a ideia do AlunoSaqua e o problema que o sistema pretende resolver: organizar o registro e o acompanhamento de solicitações da comunidade escolar.
+
+Também foram realizados:
+
+- definição do público do sistema: alunos, responsáveis, professores, funcionários, coordenação e direção;
+- delimitação do escopo inicial do projeto;
+- levantamento dos requisitos funcionais;
+- identificação das principais informações que serão armazenadas;
+- definição do fluxo principal de uma solicitação, desde o cadastro até o encerramento;
+- planejamento da divisão do sistema em **frontend, backend, API e banco de dados**;
+- registro das funcionalidades que poderão ser incluídas em versões futuras, como notas, frequência, notificações e relatórios.
+
+A documentação dessa atividade está disponível em [`docs/planejamento-semana-1.md`](docs/planejamento-semana-1.md).
+
+### Atividade 2 — Contrato da API de chamados
+
+Na segunda atividade, o grupo definiu e documentou o contrato da API responsável pelo registro e acompanhamento das solicitações escolares.
+
+Foram especificados:
+
+- o formato das mensagens da API, utilizando JSON;
+- os dados de uma solicitação: `id`, `titulo`, `descricao`, `prioridade` e `status`;
+- as regras de preenchimento dos campos obrigatórios;
+- as rotas para consultar, criar, alterar e remover solicitações;
+- os métodos HTTP `GET`, `POST`, `PATCH` e `DELETE`;
+- o filtro opcional por status;
+- os códigos de resposta `200`, `201`, `204`, `400` e `404`;
+- exemplos de requisições, respostas de sucesso e mensagens de erro;
+- o status inicial `aberto` e os demais status possíveis: `em_atendimento`, `resolvido` e `cancelado`.
+
+As principais rotas definidas foram:
+
+- `GET /chamados` — consultar solicitações;
+- `GET /chamados/{id}` — consultar uma solicitação específica;
+- `POST /chamados` — criar uma solicitação;
+- `PATCH /chamados/{id}` — alterar uma solicitação;
+- `DELETE /chamados/{id}` — remover uma solicitação.
+
+A documentação dessa atividade está disponível em [`docs/contrato-api-chamados.md`](docs/contrato-api-chamados.md).
 
 ## O que a primeira versão faz
 
