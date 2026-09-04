@@ -2,7 +2,7 @@
 
 ## Integrantes
 
-- Bruno Oliveira
+- Bruno de Oliveira
 - Natalia Cardoso
 - Raissa Queiroz
 - Rosonatt Ferreira
