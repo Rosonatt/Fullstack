@@ -167,7 +167,7 @@ As evidências estão em [`docs/evidencias-testes-fastapi-persistencia.md`](docs
 Entre na pasta do backend:
 
 ```bash
-cd C:\Users\Rosonatt\Documents\GitHub\Fullstack\projeto-alunosaqua\backend
+cd C:\Users\xxxxxx\xxxxxx\Fullstack\projeto-alunosaqua\backend
 ```
 
 Crie e ative o ambiente virtual, caso ainda não esteja criado:
