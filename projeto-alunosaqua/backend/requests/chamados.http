@@ -1,0 +1,58 @@
+### Rota inicial da API FastAPI
+GET http://localhost:8000/
+Accept: application/json
+
+### Consultar chamados persistidos
+GET http://localhost:8000/chamados
+Accept: application/json
+
+### Cadastrar chamado valido no tema AlunoSaqua
+POST http://localhost:8000/chamados
+Content-Type: application/json
+
+{
+  "titulo": "Acesso bloqueado",
+  "descricao": "Nao consigo acessar o painel do aluno.",
+  "prioridade": "alta",
+  "status": "aberto"
+}
+
+### Consultar chamado pelo id
+GET http://localhost:8000/chamados/1
+Accept: application/json
+
+### Filtrar chamados por status
+GET http://localhost:8000/chamados/status/aberto
+Accept: application/json
+
+### Titulo ausente retorna 400
+POST http://localhost:8000/chamados
+Content-Type: application/json
+
+{
+  "descricao": "Preciso de ajuda com uma informacao da escola.",
+  "prioridade": "baixa"
+}
+
+### Descricao ausente retorna 400
+POST http://localhost:8000/chamados
+Content-Type: application/json
+
+{
+  "titulo": "Duvida sobre frequencia",
+  "prioridade": "baixa"
+}
+
+### Prioridade invalida retorna 400
+POST http://localhost:8000/chamados
+Content-Type: application/json
+
+{
+  "titulo": "Problema no acesso",
+  "descricao": "Nao consigo entrar no portal.",
+  "prioridade": "urgente"
+}
+
+### Id inexistente retorna 404
+GET http://localhost:8000/chamados/999
+Accept: application/json
