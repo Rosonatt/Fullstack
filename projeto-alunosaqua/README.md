@@ -216,3 +216,4 @@ O AlunoSaqua foi pensado a partir do projeto disponível em [github.com/Rosonatt
 Nesta etapa, o grupo focou em uma parte menor para deixar a proposta mais clara e possível de desenvolver. As outras funções podem ser adicionadas aos poucos.
 
 > **Comentário do grupo:** a ideia é começar com algo simples, mas que realmente ajude a escola. Depois, outras funções podem ser encaixadas sem precisar refazer tudo.
+> 
