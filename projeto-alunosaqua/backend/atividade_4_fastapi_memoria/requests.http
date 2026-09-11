@@ -1,0 +1,38 @@
+### Rota inicial
+GET http://localhost:8000/
+Accept: application/json
+
+### Listar chamados em memoria
+GET http://localhost:8000/chamados
+Accept: application/json
+
+### Criar chamado escolar
+POST http://localhost:8000/chamados
+Content-Type: application/json
+
+{
+  "titulo": "Duvida sobre frequencia",
+  "descricao": "Minha frequencia apareceu diferente no sistema.",
+  "prioridade": "media"
+}
+
+### Buscar chamado por id
+GET http://localhost:8000/chamados/1
+Accept: application/json
+
+### Buscar id inexistente
+GET http://localhost:8000/chamados/999
+Accept: application/json
+
+### Validacao automatica do Pydantic
+POST http://localhost:8000/chamados
+Content-Type: application/json
+
+{
+  "descricao": "Preciso de ajuda com uma informacao da escola.",
+  "prioridade": "baixa"
+}
+
+### Desafio adicional por status
+GET http://localhost:8000/chamados/status/aberto
+Accept: application/json

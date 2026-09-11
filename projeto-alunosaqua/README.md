@@ -83,11 +83,11 @@ O código dessa atividade está em [`backend/`](backend/) e as evidências de te
 
 ### Atividade 4 — Primeira API com FastAPI
 
-Na quarta atividade, o back-end foi adaptado para FastAPI, seguindo o enunciado da aula prática. A API agora possui `main.py`, pode ser iniciada com Uvicorn e expõe a documentação interativa em `/docs`.
+Na quarta atividade, o back-end foi adaptado para FastAPI, seguindo o PDF `Aula_05_FastAPI_04_Atividade_Hands_On.pdf`. Como essa aula pede que os dados fiquem em memória, a entrega específica desse PDF ficou separada em [`backend/atividade_4_fastapi_memoria/`](backend/atividade_4_fastapi_memoria/).
 
 Foram implementados:
 
-- aplicação FastAPI em [`backend/main.py`](backend/main.py);
+- aplicação FastAPI em [`backend/atividade_4_fastapi_memoria/main.py`](backend/atividade_4_fastapi_memoria/main.py);
 - `GET /` para confirmar que a API está ativa;
 - `GET /chamados` para consultar chamados;
 - `POST /chamados` para cadastrar chamados;
@@ -96,6 +96,8 @@ Foram implementados:
 - desafio adicional `GET /chamados/status/{status_chamado}`.
 
 > **Comentário do grupo:** a proposta da aula falava em chamados de suporte. Adaptamos para o AlunoSaqua, então os chamados representam solicitações da comunidade escolar.
+
+A versão evoluída com banco de dados fica em [`backend/main.py`](backend/main.py), porque ela pertence à atividade seguinte de persistência.
 
 ### Atividade 5 — Persistência de chamados
 
@@ -119,7 +121,7 @@ As evidências estão em [`docs/evidencias-testes-fastapi-persistencia.md`](docs
 - [x] Atividade 1 — planejamento do AlunoSaqua.
 - [x] Atividade 2 — contrato da API.
 - [x] Atividade 3 — API inicial com dados em memória.
-- [x] Atividade 4 — API FastAPI.
+- [x] Atividade 4 — API FastAPI em memória, conforme o PDF da Aula 05.
 - [x] Atividade 5 — persistência com SQLite.
 
 ## O que a primeira versão faz
@@ -147,10 +149,12 @@ As evidências estão em [`docs/evidencias-testes-fastapi-persistencia.md`](docs
 - `docs/diagrama-arquitetura.md`: visão de como as partes do sistema se comunicam.
 - `docs/contrato-api-chamados.md`: regras e exemplos das solicitações da aplicação.
 - `docs/evidencias-testes-api-chamados.md`: registros reproduzíveis dos testes da API.
+- `docs/evidencias-aula-05-fastapi-memoria.md`: evidências do PDF da Aula 05 com FastAPI em memória.
 - `docs/evidencias-testes-fastapi-persistencia.md`: evidências das atividades 4 e 5.
 - `frontend/`: parte visual do sistema.
 - `backend/`: API de chamados.
-- `backend/main.py`: aplicação FastAPI atual.
+- `backend/atividade_4_fastapi_memoria/`: versão em memória pedida no PDF `Aula_05_FastAPI_04_Atividade_Hands_On.pdf`.
+- `backend/main.py`: aplicação FastAPI atual com SQLite.
 - `backend/app/`: rotas, modelos, serviços, repositórios e conexão com o banco.
 - `backend/banco/`: scripts SQL versionados.
 - `backend/requirements.txt`: dependências Python do backend.
@@ -161,6 +165,41 @@ As evidências estão em [`docs/evidencias-testes-fastapi-persistencia.md`](docs
 - `backend/test/`: testes da implementação inicial em Node.
 - `backend/requests/`: requisições HTTP para testar manualmente.
 - `database/`: dados que serão armazenados.
+
+## Como executar a API da Aula 05 em memória
+
+Entre na pasta da atividade:
+
+```bash
+cd C:\Users\xxxxxx\xxxxxx\Fullstack\projeto-alunosaqua\backend\atividade_4_fastapi_memoria
+```
+
+Crie e ative o ambiente virtual, caso ainda não esteja criado:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+Instale as dependências:
+
+```bash
+pip install -r requirements.txt
+```
+
+Para iniciar a API pedida no PDF:
+
+```bash
+uvicorn main:app --reload
+```
+
+A API fica disponível em `http://localhost:8000` e a documentação interativa fica em `http://localhost:8000/docs`.
+
+Para rodar todos os testes automatizados pedidos nesse PDF em um comando, execute a partir da raiz do projeto:
+
+```powershell
+cd backend\atividade_4_fastapi_memoria; & "..\.venv\Scripts\python.exe" -m pytest
+```
 
 ## Como executar a API atual das Partes 4 e 5
 
