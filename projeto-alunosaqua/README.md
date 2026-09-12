@@ -3,7 +3,7 @@
 ## Integrantes
 
 - Bruno de Oliveira
-- Natalia Cardoso
+- Natália Cardoso
 - Raissa Queiroz
 - Rosonatt Ferreira
 - Ryan Guiwison
